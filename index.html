@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/5.3/ -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+        <https://favicon.io/emoji-favicons/money-bag/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link href="/static/favicon.ico" rel="icon">
+        <link href="/static/style.css" type="text/css" rel="stylesheet">
+
+        <title>Waads Webpage</title>
+    </head>
+    <body class="header">
+        <div class="section">
+            <form action="/search" method="get">
+                <i class="fas fa-bars" id="explore-toggle"></i>
+                <div id="explore-content" style="display:none;">
+                    <p>Explore more content here...</p>
+                    <ul>
+                        {% for id, nasa_name, nasa_description, nasa_link in nasa_data %}
+                             <li>
+                                <h4>{{ nasa_name }}</h4>
+                                <p>{{ nasa_description }}</p>
+                                <p><a href="{{ nasa_link }}">NASA</a></p>
+                             </li>
+                        {% endfor %}
+                    </ul>
+                    <ul>
+                        {% for id, mission_name, mission_description, mission_link in missions_data %}
+                             <li>
+                                <h4>{{ mission_name }}</h4>
+                                <p>{{ mission_description }}</p>
+                                <p><a href="{{ mission_link }}">Missions of NASA</a></p>
+                             </li>
+                        {% endfor %}
+                    </ul>
+                    <ul>
+                        {% for id, title, description, url in books_data %}
+                             <li>
+                                <h4>{{ title }}</h4>
+                                <p>{{ description }}</p>
+                                <p><a href="{{ url }}">e-Books from NASA</a></p>
+                             </li>
+                        {% endfor %}
+                    </ul>
+                    <ul>
+                        {% for id, title, description, url, photo_name, photo_link in space_data %}
+                            <li>
+                                <h4>{{ title }}</h4>
+                                <p>{{ description }}</p>
+                                {% if id == 1 %}
+                                    <p><a href="{{ url }}">Our Solar System</a></p>
+                                {% elif id == 2 %}
+                                    <p><a href="{{ url }}">Our Solar System Photos</a></p>
+                                {% elif id == 3 %}
+                                    <p><a href="{{ url }}">Solar System Book</a></p>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <ul>
+                        {% for id, title, description, url, photo_name, photo_link in space_data %}
+                            {% if photo_name and photo_link %}
+                               <li>
+                                  <h4>{{ photo_name }}</h4>
+                                  <p><a href="{{ photo_link }}">Stars Photos</a></p>
+                               </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+            </div>
+                <input type="text" id="searchInput" name="query" placeholder="Search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        {% if content %}
+             <div>{{ content }}</div>
+        {% endif %}
+        <div>
+            <header class="large">Space world.</header>
+            <main class="main">Hello and welcome into my website. This website will cover various informations about space.</main>
+            <br>
+            <div style="position: relative;">
+                <i class="fas fa-cloud" style="font-size: 24px; position: absolute; left: 0; top: 0; z-index: -1;color:lightblue;"></i>
+                <h1 class="sp" style="position: relative; z-index: 1;" id="space">Space</h1>
+            </div>
+            <br>
+            <h1 class="sp">What is space?</h1>
+            <h2>Space is a three-dimensional continuum containing positions and directions. In classical physics, physical space is often conceived in three linear dimensions. Modern physicists usually consider it, with time, to be part of a boundless four-dimensional continuum known as spacetime.</h2>
+            <br>
+            <div style="position: relative;">
+                <i class="fas fa-cloud" style="font-size: 24px; position: absolute; left: 0; top: 0; z-index: -1;color:lightblue;"></i>
+                <h1 class="sp" style="position: relative; z-index: 1;">Planets</h1>
+            </div>
+            <br>
+            <div class="sp1">
+                <span>
+                    <h1 id="atp">About the Planets</h1>
+                </span>
+                <p class="planettype">The solar system has eight planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune. There are five officially recognized dwarf planets in our solar system: Ceres, Pluto, Haumea, Makemake, and Eris. Click here  <a href="planets.html" style="color:lightblue">planets</a> to see the details and links.</p>
+                <h1>What is a Planet?</h1>
+                <br>
+                <p class="planettype">Any of the large bodies that revolve around the Sun in the solar system.</p>
+                <p class="planettype">The Short Answer: A planet must do three things: it must orbit a star, it must be big enough to have enough gravity to force a spherical shape, and it must be big enough that its gravity cleared away any objects of a similar size near its orbit.</p>
+                <br>
+                <h1 id="inner-planets">Inner Planets</h1>
+                <p class="ls">The first four planets from the Sun are Mercury, Venus, Earth, and Mars. These inner planets also are known as terrestrial planets because they have solid surfaces.</p>
+                <span>
+                    <p class="fontsize" id="earth">1. Earth Facts/</p>
+                    <p class="dodgerblue">Earth – our home planet – is the third planet from the Sun, and the fifth largest planet. You can visit <a href="earth.html" style="color:lightblue">Earth</a> to know more about our planet.</p>
+                    <p class="fontsize" id="mercury">2. Mercury Facts/</p>
+                    <p class="dodgerblue">Mercury is the smallest planet in our solar system, and the nearest to the Sun.</p>
+                    <p class="fontsize" id="venus">3. Venus Facts/</p>
+                    <p class="dodgerblue">Venus is the second planet from the Sun, and Earth's closest planetary neighbor.</p>
+                    <p class="fontsize" id="mars">4. Mars Facts</p>
+                    <p class="dodgerblue">Mars – the fourth planet from the Sun – is a dusty, cold, desert world with a very thin atmosphere.</p>
+                </span>
+                <h1 id="outer-planets">Outer Planets</h1>
+                <p class="ls">The giant planets in our outer solar system don't have hard surfaces and instead have swirling gases above a core. Jupiter and Saturn are gas giants. Uranus and Neptune are ice giants.</p>
+                <span>
+                    <p class="fontsize" id="jupiter">1. Jupiter Facts</p>
+                    <p class="dodgerblue">Jupiter is the largest planet in our solar system – if it were a hollow shell, 1,000 Earths could fit inside.</p>
+                    <p class="fontsize" id="saturn">2. Saturn Facts</p>
+                    <p class="dodgerblue">Saturn is the sixth planet from the Sun, the second-largest planet in our solar system.</p>
+                    <p class="fontsize" id="uranus">3. Uranus Facts</p>
+                    <p class="dodgerblue">The seventh planet from the Sun, Uranus has the third largest diameter of planets in our solar system.</p>
+                    <p class="fontsize" id="neptune">4. Neptune Facts</p>
+                    <p class="dodgerblue">Neptune is the eighth and most distant planet in our solar system.</p>
+                </span>
+                <h1 id="dwarf-planets">Dwarf Planets</h1>
+                <p class="ls">Beyond Neptune, a newer class of smaller worlds called dwarf planets reign, including longtime favorite Pluto. The other dwarf planets are Ceres, Makemake, Haumea, and Eris. Ceres is the only dwarf planet in the inner solar system. It's located in the main asteroid belt between Mars and Jupiter.</p>
+                <span>
+                    <p class="fontsize" id="ceres">1. Ceres Facts</p>
+                    <p class="dodgerblue">Dwarf planet Ceres is the largest object in the asteroid belt between Mars and Jupiter, and it's the only dwarf planet located in the inner solar system.</p>
+                    <p class="fontsize" id="pluto">2. Pluto Facts</p>
+                    <p class="dodgerblue">Pluto was long considered our solar system's ninth planet. But it was reclassified as a dwarf planet in 2006 by the International Astronomical Union.</p>
+                    <p class="fontsize" id="haumea">3. Haumea Facts</p>
+                    <p class="dodgerblue">Haumea was nicknamed Santa by one discovery team. It is oval-shaped, and is one of the fastest rotating large objects in our solar system.</p>
+                    <p class="fontsize" id="makemake">4. Makemake Facts</p>
+                    <p class="dodgerblue">Makemake is slightly smaller than Pluto, and is the second-brightest object in the Kuiper Belt, while Pluto is the brightest.</p>
+                    <p class="fontsize" id="eris">5. Eris Facts</p>
+                    <p class="dodgerblue">The discovery of Eris helped trigger a debate in the scientific community that led to the decision to clarify the definition of a planet.</p>
+                </span>
+            </div>
+            <div>
+                <div style="position: relative;">
+                    <i class="fas fa-cloud" style="font-size: 24px; position: absolute; left: 0; top: 0; z-index: -1;color:lightblue;"></i>
+                    <h1 class="sp" style="position: relative; z-index: 1;"  id="the sun">The Sun</h1>
+                </div>
+                <p class="sun">The Sun is the star at the heart of our solar system. Its gravity holds the solar system together, keeping everything — from the biggest planets to the smallest bits of debris — in its orbit.</p>
+                <p class="fontsize">Overview</p>
+                <p class="sunov">The Sun's gravity holds the solar system together, keeping everything – from the biggest planets to the smallest particles of debris – in its orbit. The connection and interactions between the Sun and Earth drive the seasons, ocean currents, weather, climate, radiation belts and auroras. Though it is special to us, there are billions of stars like our Sun scattered across the Milky Way galaxy.
+
+                    The Sun has many names in many cultures. The Latin word for Sun is “sol,” which is the main adjective for all things Sun-related: solar.</p>
+                <p class="fontsize">Heliophysics Big Year</p>
+                <p class="sunov">The Heliophysics Big Year is a global celebration of the Sun’s influence on Earth and the entire solar system.</p>
+
+                <div style="position: relative;">
+                    <i class="fas fa-cloud" style="font-size: 24px; position: absolute; left: 0; top: 0; z-index: -1;color:lightblue;"></i>
+                    <h1 class="sp" style="position: relative; z-index: 1;">Stars</h1>
+                </div>
+                <p class="sunover">Astronomers estimate that the universe could contain up to one septillion stars – that’s a one followed by 24 zeros. Our Milky Way alone contains more than 100 billion, including our most well-studied star, the Sun.
+
+                    Stars are giant balls of hot gas – mostly hydrogen, with some helium and small amounts of other elements. Every star has its own life cycle, ranging from a few million to trillions of years, and its properties change as it ages.If you want to know more about stars you can visit <a href="stars.html" style="color:violet">Stars</a>.</p>
+
+                <div style="position: relative;">
+                    <i class="fas fa-cloud" style="font-size: 24px; position: absolute; left: 0; top: 0; z-index: -1;color:lightblue;"></i>
+                    <h1 class="sp" style="position: relative; z-index: 1;">Galaxies</h1>
+                </div>
+                <p class="sunover">Galaxies consist of stars, planets, and vast clouds of gas and dust, all bound together by gravity. The largest contain trillions of stars and can be more than a million light-years across. The smallest can contain a few thousand stars and span just a few hundred light-years. Most large galaxies have supermassive black holes at their centers, some with billions of times the Sun’s mass.</p>
+                <p class="sunover">Galaxies come in a variety of shapes, mostly spirals and ellipticals, as well as those with less orderly appearances, usually dubbed irregular.</p>
+                <p class="sunover">Most galaxies are between 10 billion and 13.6 billion years old. Some are almost as old as the universe itself, which formed around 13.8 billion years ago. Astronomers think the youngest known galaxy formed approximately 500 million years ago.</p>
+                <p class="sunover">Galaxies can organize into groups of about 100 or fewer members held together by their mutual gravity. Larger structures, called clusters, may contain thousands of galaxies. Groups and clusters can be arranged in superclusters, which are not gravitationally bound. Superclusters, empty voids, “walls” of galaxies, and other large-scale structures make up the cosmic web of matter in the universe.</p>
+                <p class="sunover">You cna go to <a href="galaxies.html" style="color:lightblue">Galaxies</a> if you wanna know more.</p>
+                <br>
+                <div style="position: relative;">
+                    <i class="fas fa-cloud" style="font-size: 24px; position: absolute; left: 0; top: 0; z-index: -1;color:lightblue;"></i>
+                    <h1 class="sp" style="position: relative; z-index: 1;">Black Holes</h1>
+                </div>
+                <p class="sunover">Black holes are among the most mysterious cosmic objects, much studied but not fully understood. These objects aren’t really holes. They’re huge concentrations of matter packed into very tiny spaces. A black hole is so dense that gravity just beneath its surface, the event horizon, is strong enough that nothing – not even light – can escape. The event horizon isn’t a surface like Earth’s or even the Sun’s. It’s a boundary that contains all the matter that makes up the black hole.</p>
+                <p class="sunover">There is much we don’t know about black holes, like what matter looks like inside their event horizons. However, there is a lot that scientists do know about black holes.</p>
+                <p class="sunover">You cna go to <a href="blackhole.html" style="color:lightblue">Black Holes</a> if you wanna know more.</p>
+                <br>
+            </div>
+            <script>
+                document.getElementById('explore-toggle').addEventListener('click', function() {
+                    var content = document.getElementById('explore-content');
+                    if (content.style.display === 'none'){
+                        content.style.display = 'block';
+                    }
+                    else {
+                        content.style.display = 'none';
+                    }
+                });
+
+                document.addEventListener("DOMContentLoaded", function(){
+                    const query = "{{ query }}";
+                    if (query === "inner planets") {
+                        document.getElementById("inner-planets").scrollIntoView();
+                    }
+                    else if (query === "outer planets") {
+                        document.getElementById("outer-planets").scrollIntoView();
+                    }
+                    else if (query === "dwarf planets") {
+                        document.getElementById("dwarf-planets").scrollIntoView();
+                    }
+                    else if (query === "the sun") {
+                        document.getElementById("the sun").scrollIntoView();
+                    }
+                    else if (query === "space") {
+                        document.getElementById("space").scrollIntoView();
+                    }
+                    else if (query === "about the planets") {
+                        document.getElementById("atp").scrollIntoView();
+                    }
+                    else if (query === "mercury") {
+                        document.getElementById("mercury").scrollIntoView();
+                    }
+                    else if (query === "venus") {
+                        document.getElementById("venus").scrollIntoView();
+                    }
+                    else if (query === "mars") {
+                        document.getElementById("mars").scrollIntoView();
+                    }
+                    else if (query === "jupiter") {
+                        document.getElementById("jupiter").scrollIntoView();
+                    }
+                    else if (query === "saturn") {
+                        document.getElementById("saturn").scrollIntoView();
+                    }
+                    else if (query === "uranus") {
+                        document.getElementById("uranus").scrollIntoView();
+                    }
+                    else if (query === "neptune") {
+                        document.getElementById("neptune").scrollIntoView();
+                    }
+                    else if (query === "ceres") {
+                        document.getElementById("ceres").scrollIntoView();
+                    }
+                    else if (query === "pluto") {
+                        document.getElementById("pluto").scrollIntoView();
+                    }
+                    else if (query === "haumea") {
+                        document.getElementById("haumea").scrollIntoView();
+                    }
+                    else if (query === "makemake") {
+                        document.getElementById("makemake").scrollIntoView();
+                    }
+                    else if (query === "eris") {
+                        document.getElementById("eris").scrollIntoView();
+                    }
+                });
+            </script>
+        </div>
+        <hr style="text-decoration-line: underline; text-decoration-color: white;">
+        <footer>
+            <p class="footer"><span class="note">Note:</span> All the informations and images are from NASA...</p>
+        </footer>
+        <br>
+    </body>
+</html>
+

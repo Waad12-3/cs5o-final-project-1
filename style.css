@@ -1,0 +1,226 @@
+body {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Planet_collage_to_scale.jpg/1024px-Planet_collage_to_scale.jpg');
+    color: white;
+}
+
+.starbody {
+    background-image: url('https://science.nasa.gov/wp-content/uploads/2023/09/stsci-01ga76rm0c11w977jrhgj5j26x-2.png?w=1536&format=webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.small-image {
+    width: 70%;
+    height: auto;
+}
+
+.small1-image {
+    width: 50%;
+    height: auto;
+}
+
+.txtal {
+    text-decoration-line: underline;
+    text-decoration-color: purple;
+    font-size: 70px;
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-color: gray;
+    text-decoration-style: dashed;
+}
+
+.txtal1 {
+    text-decoration-line: underline;
+    text-decoration-color: purple;
+    font-size: 70px;
+    padding-left: 1rem;
+    font-style: italic;
+}
+
+.header {
+    color: white;
+    background-color:rgba(255, 99, 71, 0.5);
+    font-style: italic;
+}
+
+.main {
+    padding: 2rem;
+    text-align: center;
+    font-size: 30px;
+    text-decoration-line: underline;
+    text-decoration-color: gray;
+    text-decoration-style: line;
+}
+
+.space {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+h2 {
+    padding: 2rem;
+}
+
+.section {
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+}
+
+.large {
+    text-decoration-line: underline;
+    text-decoration-color: lightblue;
+    font-size: 70px;
+    text-align: center;
+}
+
+.planet {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Planet_collage_to_scale.jpg/1024px-Planet_collage_to_scale.jpg');
+    padding: 2rem;
+    color: #FFFFFF;
+}
+
+.fontsize {
+    font-size: 35px;
+    padding-left: 4rem;
+    font-style: italic;
+}
+
+.planettype {
+    padding-left: 4rem;
+    font-size: large;
+    font-style: italic;
+}
+
+.ls {
+    font-size: large;
+}
+
+.sun {
+    font-size:20px;
+    padding-left: 4rem;
+    font-style: italic;
+}
+
+.dodgerblue {
+    font-style: italic;
+    color: lightblue;
+    padding-left: 8rem;
+    font-size: 20px;
+}
+
+.sunov {
+    font-style: italic;
+    padding-left: 8rem;
+    font-size: 20px;
+}
+
+.sunov1 {
+    font-style: italic;
+    padding-left: 12rem;
+    font-size: 20px;
+}
+
+.sunover {
+    font-style: italic;
+    padding-left: 4rem;
+    font-size: 20px;
+}
+
+.sp {
+    padding-left: 2rem;
+}
+
+.sp2 {
+    padding-left: 2rem;
+    font-size: 60px;
+}
+
+.sp3 {
+    padding-left: 2rem;
+    font-size: 60px;
+    padding-left: 8rem;
+    padding-top: 2rem;
+}
+
+.sp1 {
+    padding-left: 4rem;
+}
+
+.earth {
+    background: url('https://science.nasa.gov/wp-content/uploads/2023/05/earth-1-jpg.webp?w=1536&format=webp');
+
+}
+.s {
+    padding-top: 2rem;
+    padding: 2rem;
+}
+
+.header1 {
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 100px;
+    text-decoration-line: underline;
+    text-decoration-color: gray;
+    text-decoration-style: dashed;
+}
+
+.footer {
+    padding-left: 4rem;
+    font-size: 20px;
+    text-decoration-line: underline;
+    text-decoration-color: white;
+}
+
+.line {
+    text-decoration-line: underline;
+    text-decoration-color: white;
+}
+
+.note {
+    color: DodgerBlue;
+}
+
+.planets {
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+table {
+    width: 100%;
+    height: 100vh;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: rgba(255, 0, 0, 0.2);;
+    color: black;
+    font-size: 35px;
+}
+
+td {
+    font-size: 30px;
+    color: black;
+    font-style: italic;
+}
+
+table, th, td {
+    border: 3px solid #ddd;
+}
+
+
